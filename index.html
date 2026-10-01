@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f8ff">
+  <meta name="description" content="Trang giới thiệu bản thân của Lê Chí Tài, sinh viên Trường Đại học Cần Thơ.">
+  <title>Giới thiệu bản thân | Lê Chí Tài</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17253f;
+      --muted: #63718a;
+      --blue: #3867e8;
+      --blue-dark: #244cbd;
+      --teal: #36b9b0;
+      --paper: #ffffff;
+      --line: #e7edf7;
+      --shadow: 0 24px 70px rgba(34, 65, 125, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 8% 4%, rgba(91, 136, 255, 0.12), transparent 28rem),
+        radial-gradient(ellipse at 96% 52%, rgba(54, 185, 176, 0.10), transparent 25rem),
+        #f4f8ff;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page-shell {
+      width: min(1080px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 27px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-size: 0.98rem;
+      font-weight: 750;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 13px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--blue), #6a8cff);
+      box-shadow: 0 8px 20px rgba(56, 103, 232, 0.24);
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 30px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--blue);
+    }
+
+    main {
+      padding: 20px 0 48px;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 410px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      overflow: hidden;
+      padding: 58px 68px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero::before {
+      top: -190px;
+      right: -115px;
+      width: 450px;
+      height: 450px;
+      background: linear-gradient(145deg, rgba(89, 134, 255, 0.12), rgba(54, 185, 176, 0.15));
+    }
+
+    .hero::after {
+      right: 225px;
+      bottom: -235px;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(56, 103, 232, 0.12);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--teal);
+      content: "";
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 600px;
+      margin-bottom: 14px;
+      font-size: clamp(2.7rem, 6vw, 4.4rem);
+      letter-spacing: -0.055em;
+      line-height: 1.08;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-copy {
+      max-width: 490px;
+      margin-bottom: 27px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: var(--blue);
+      box-shadow: 0 9px 20px rgba(56, 103, 232, 0.22);
+    }
+
+    .button-primary:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 12px 24px rgba(56, 103, 232, 0.28);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      display: grid;
+      min-height: 280px;
+      place-items: center;
+    }
+
+    .portrait-orbit {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px dashed rgba(56, 103, 232, 0.32);
+      border-radius: 50%;
+    }
+
+    .portrait-orbit::before,
+    .portrait-orbit::after {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 3px 10px rgba(23, 37, 63, 0.12);
+      content: "";
+    }
+
+    .portrait-orbit::before {
+      top: 34px;
+      right: 23px;
+    }
+
+    .portrait-orbit::after {
+      bottom: 39px;
+      left: 7px;
+      background: #f2b95f;
+    }
+
+    .portrait {
+      position: relative;
+      display: grid;
+      width: 200px;
+      height: 200px;
+      place-items: center;
+      border: 10px solid rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(145deg, #7897ff 2%, #4773ed 54%, #35bcb1 100%);
+      box-shadow: 0 22px 48px rgba(56, 103, 232, 0.24);
+      font-size: 3.6rem;
+      font-weight: 800;
+      letter-spacing: -0.08em;
+    }
+
+    .portrait-tag {
+      position: absolute;
+      right: 0;
+      bottom: 28px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 13px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 25px rgba(34, 65, 125, 0.1);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 72px;
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+    }
+
+    .section-note {
+      max-width: 300px;
+      margin-bottom: 2px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .info-card,
+    .study-card,
+    .hobby-card {
+      border: 1px solid rgba(226, 234, 247, 0.9);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 12px 34px rgba(34, 65, 125, 0.055);
+    }
+
+    .info-card {
+      display: flex;
+      min-height: 120px;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 23px;
+    }
+
+    .card-icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--blue);
+      background: #eef3ff;
+      font-size: 1.2rem;
+    }
+
+    .info-card:nth-child(2) .card-icon,
+    .hobby-card:nth-child(2) .card-icon {
+      color: #138e85;
+      background: #e7f8f5;
+    }
+
+    .info-card:nth-child(3) .card-icon {
+      color: #a66d14;
+      background: #fff5df;
+    }
+
+    .info-card h3,
+    .study-card h3,
+    .hobby-card h3 {
+      margin: 0 0 5px;
+      font-size: 0.94rem;
+    }
+
+    .info-card p,
+    .study-card p,
+    .hobby-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .study-card {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 28px;
+    }
+
+    .school-mark {
+      display: grid;
+      width: 66px;
+      height: 66px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 20px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--blue), #69a0f6);
+      box-shadow: 0 10px 22px rgba(56, 103, 232, 0.2);
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .study-label {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: var(--blue);
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .study-card h3 {
+      margin-bottom: 6px;
+      font-size: 1.13rem;
+    }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .hobby-card {
+      min-height: 185px;
+      padding: 23px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(34, 65, 125, 0.1);
+    }
+
+    .hobby-card .card-icon {
+      margin-bottom: 17px;
+      font-size: 1.35rem;
+    }
+
+    .hobby-card:nth-child(3) .card-icon {
+      color: #aa6a21;
+      background: #fff2e5;
+    }
+
+    .closing {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      margin-top: 72px;
+      overflow: hidden;
+      padding: 32px 38px;
+      border-radius: 22px;
+      color: #fff;
+      background: linear-gradient(110deg, #315fd5, #487ce8 62%, #38aaa6);
+      box-shadow: 0 18px 42px rgba(56, 103, 232, 0.2);
+    }
+
+    .closing::after {
+      position: absolute;
+      top: -100px;
+      right: 140px;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .closing h2 {
+      margin-bottom: 4px;
+      font-size: 1.35rem;
+      letter-spacing: -0.025em;
+    }
+
+    .closing p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.92rem;
+    }
+
+    .closing .button {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 auto;
+      color: var(--blue-dark);
+      background: #fff;
+    }
+
+    footer {
+      padding: 25px 0 31px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      text-align: center;
+    }
+
+    :focus-visible {
+      outline: 3px solid #f2b95f;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(100% - 32px, 560px);
+      }
+
+      .site-header {
+        padding: 19px 0;
+      }
+
+      .site-nav {
+        gap: 16px;
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 42px 30px 25px;
+      }
+
+      .hero-copy {
+        max-width: 530px;
+      }
+
+      .portrait-wrap {
+        min-height: 255px;
+      }
+
+      .portrait {
+        width: 175px;
+        height: 175px;
+        font-size: 3.15rem;
+      }
+
+      .portrait-orbit {
+        width: 225px;
+        height: 225px;
+      }
+
+      .portrait-tag {
+        right: 8%;
+        bottom: 16px;
+      }
+
+      .section {
+        margin-top: 55px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 10px;
+      }
+
+      .hobby-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hobby-card {
+        min-height: 0;
+      }
+
+      .closing {
+        margin-top: 55px;
+        padding: 27px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-shell {
+        width: calc(100% - 28px);
+      }
+
+      .site-header {
+        align-items: flex-start;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 0.88rem;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .site-nav {
+        gap: 12px;
+        padding-top: 8px;
+        font-size: 0.75rem;
+      }
+
+      main {
+        padding-top: 10px;
+      }
+
+      .hero {
+        padding: 34px 22px 20px;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 13vw, 3.4rem);
+      }
+
+      .hero-copy {
+        font-size: 0.96rem;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      .button {
+        min-height: 44px;
+        padding: 0 14px;
+        font-size: 0.84rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .info-card {
+        min-height: 0;
+        padding: 19px;
+      }
+
+      .study-card {
+        align-items: flex-start;
+        gap: 15px;
+        padding: 21px;
+      }
+
+      .school-mark {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        font-size: 1.05rem;
+      }
+
+      .closing {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#trang-chu" aria-label="Lê Chí Tài - về đầu trang">
+        <span class="brand-mark" aria-hidden="true">LT</span>
+        <span>Góc nhỏ của Tài</span>
+      </a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="#ve-minh">Về mình</a>
+        <a href="#hoc-tap">Học tập</a>
+        <a href="#so-thich">Sở thích</a>
+      </nav>
+    </header>
+
+    <main id="trang-chu">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Xin chào, mình là</p>
+          <h1 id="hero-title">Lê Chí <span>Tài</span></h1>
+          <p class="hero-copy">
+            Một sinh viên trẻ luôn tò mò, yêu thích khám phá những điều mới
+            và trân trọng những niềm vui giản dị mỗi ngày.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#ve-minh">
+              Khám phá về mình <span aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-secondary" href="#so-thich">
+              <span aria-hidden="true">✦</span> Điều mình yêu thích
+            </a>
+          </div>
+        </div>
+        <div class="portrait-wrap" aria-label="Chân dung chữ cái L T">
+          <div class="portrait-orbit" aria-hidden="true"></div>
+          <div class="portrait" aria-hidden="true">LT</div>
+          <div class="portrait-tag">Sinh viên · Cần Thơ</div>
+        </div>
+      </section>
+
+      <section class="section" id="ve-minh" aria-labelledby="about-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Một chút về mình</p>
+            <h2 id="about-title">Những điều cơ bản</h2>
+          </div>
+          <p class="section-note">Mỗi trải nghiệm đều góp phần tạo nên câu chuyện của riêng mình.</p>
+        </div>
+        <div class="about-grid">
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">♙</span>
+            <div>
+              <h3>Họ và tên</h3>
+              <p>Lê Chí Tài</p>
+            </div>
+          </article>
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">▦</span>
+            <div>
+              <h3>Ngày sinh</h3>
+              <p>17 tháng 12, 2008</p>
+            </div>
+          </article>
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">⌖</span>
+            <div>
+              <h3>Địa chỉ</h3>
+              <p>Ấp Phú Mỹ 2, xã An Bình, huyện Long Hồ, tỉnh Vĩnh Long</p>
+            </div>
+          </article>
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">♡</span>
+            <div>
+              <h3>Điều mình trân trọng</h3>
+              <p>Gia đình, bạn bè và những điều tích cực quanh mình.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="hoc-tap" aria-labelledby="study-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Hành trình học tập</p>
+            <h2 id="study-title">Con đường mình đang đi</h2>
+          </div>
+        </div>
+        <article class="study-card">
+          <div class="school-mark" aria-hidden="true">CTU</div>
+          <div>
+            <span class="study-label">Hiện tại</span>
+            <h3>Sinh viên Trường Đại học Cần Thơ</h3>
+            <p>Mình đang học tập, tích lũy kiến thức và từng bước khám phá con đường tương lai.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="so-thich" aria-labelledby="hobby-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Ngoài giờ học</p>
+            <h2 id="hobby-title">Những điều mình yêu thích</h2>
+          </div>
+          <p class="section-note">Các sở thích nhỏ giúp ngày thường thêm nhiều màu sắc.</p>
+        </div>
+        <div class="hobby-grid">
+          <article class="hobby-card">
+            <span class="card-icon" aria-hidden="true">▤</span>
+            <h3>Đọc truyện</h3>
+            <p>Đắm mình trong những câu chuyện và khám phá thế giới qua từng trang sách.</p>
+          </article>
+          <article class="hobby-card">
+            <span class="card-icon" aria-hidden="true">♫</span>
+            <h3>Nghe nhạc</h3>
+            <p>Tìm chút cảm hứng, thư giãn và tận hưởng những giai điệu yêu thích.</p>
+          </article>
+          <article class="hobby-card">
+            <span class="card-icon" aria-hidden="true">✧</span>
+            <h3>Chơi game</h3>
+            <p>Giải trí sau giờ học và có thêm những phút giây vui vẻ cùng bạn bè.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="closing">
+        <div>
+          <h2>Cảm ơn bạn đã ghé thăm!</h2>
+          <p>Chúc bạn có một ngày thật vui và nhiều cảm hứng.</p>
+        </div>
+        <a class="button" href="#trang-chu">Lên đầu trang <span aria-hidden="true">↑</span></a>
+      </aside>
+    </main>
+
+    <footer>
+      <p>© 2026 · Trang giới thiệu cá nhân của Lê Chí Tài</p>
+    </footer>
+  </div>
+</body>
+</html>
